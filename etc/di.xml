@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Pg\OrderComment\Api\ConfigInterface" type="Pg\OrderComment\Model\Config" />
+    <preference for="Pg\OrderComment\Api\OrderProcessorInterface" type="Pg\OrderComment\Model\OrderProcessor" />
+    <preference for="Pg\OrderComment\Api\Data\OrderCommentInterface" type="Pg\OrderComment\Model\Data\OrderComment" />
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="pg_ordercommend_order_save" type="Pg\OrderComment\Plugin\OrderSavePlugin" />
+        <plugin name="pg_ordercommend_order_get" type="Pg\OrderComment\Plugin\OrderGetPlugin" />
+    </type>
+</config>
